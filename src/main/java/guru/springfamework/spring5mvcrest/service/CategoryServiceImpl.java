@@ -2,12 +2,13 @@ package guru.springfamework.spring5mvcrest.service;
 
 import guru.springfamework.spring5mvcrest.api.v1.mapper.CategoryMapper;
 import guru.springfamework.spring5mvcrest.api.v1.model.CategoryDto;
-import guru.springfamework.spring5mvcrest.domain.Category;
 import guru.springfamework.spring5mvcrest.repositories.CategoryRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class CategoryServiceImpl implements CategoryService{
 
     private final CategoryRepository repository;
