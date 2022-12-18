@@ -3,6 +3,8 @@ package guru.springfamework.spring5mvcrest.controller.v1;
 import guru.springfamework.spring5mvcrest.api.v1.model.CustomerDto;
 import guru.springfamework.spring5mvcrest.api.v1.model.CustomerListDto;
 import guru.springfamework.spring5mvcrest.service.CustomerService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Api("Customer Controller APIsi")
 @RequestMapping(CustomerController.CUSTOMER_API_URL)
 @RestController
 public class CustomerController {
@@ -21,6 +24,7 @@ public class CustomerController {
         this.service = service;
     }
 
+    @ApiOperation(value = "Müşteri listesini elde eder.", notes = "Müşteri listesi elde etme operasyonu notları.")
     @GetMapping
     public CustomerListDto getCustomers() {
         List<CustomerDto> customerList = service.getCustomers();
